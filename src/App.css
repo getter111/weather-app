@@ -1,38 +1,310 @@
-.App {
+.App-link {
+  color: #61dafb;
+}
+html {
+  background-color: #303030;
+  color: white;
+  overflow: auto;
+  height: 100%;
+  scrollbar-color: rgb(20, 165, 227) grey;
+}
+
+*::-webkit-scrollbar-track {
+  color: rgb(20, 165, 227);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+/* header css*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #424242;
+  font-size: 24px;
+  border: 5px whitesmoke solid;
+  height: 3rem;
+}
+hr {
+  display: inline-block;
+  width: 90%;
+  color: whitesmoke;
+}
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.search-btn {
+  padding: 4px;
+  border: 2px solid grey;
+  border-radius: 15%;
+  font-weight: 600;
+  border: 2px solid rgba(49, 43, 45, 0.15);
+  border-radius: 6px;
+  align-self: center;
+}
+#search-bar {
+  color: white;
+  border: none;
+  height: 20px;
+  width: 80%;
+  font-size: 15px;
+  background-color: #424242;
+  outline: 0;
+}
+.highlight {
+  width: 60%;
+}
+.focused {
+  border: 5px yellow solid;
+}
+
+/*title css*/
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.forecast-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tempToggleBtn {
+  flex: 0.5 1 0;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  top: 5.5rem;
+  margin: 0.4rem;
+  padding: 1rem;
+}
+.tempToggleBtn button {
+  padding: 4px;
+  border-radius: 15%;
+  font-weight: 600;
+  border: 2px solid rgba(49, 43, 45, 0.15);
+  border-radius: 6px;
+}
+button:hover {
+  background-color: blanchedalmond;
+  cursor: pointer;
+}
+
+/*Main display CSS*/
+.main-left img {
+  width: 140px;
+  height: 140px;
+}
+/* .main-right img {
+  width: 0.5vw;
+  height: 0.5vh;
+} */
+
+.main-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-height: 400px;
+  color: #f2f2f2;
+  background-color: #a97070;
   text-align: center;
+  padding: 8px;
+  height: 16rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-left {
+  width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 350px;
+}
+.main-left-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-left-temp div,
+.main-left-time {
+  margin: 7px;
+}
+.main-left-time {
+  padding-bottom: 10px;
+}
+.left-temp {
+  font-size: 22px;
+}
+.FC {
+  font-style: oblique;
+  font-size: large;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.forecast-wrapper {
+  display: flex;
+  align-self: flex-end;
+  flex: 0.6 1 0;
+  align-items: center;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+.forecast-day {
+  padding-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.forecast-temp {
+  margin: 10px;
+}
+.forecast-wrapper div {
+  text-align: center;
+  margin: 6.8px;
+  gap: 35px;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+.forecast-card img {
+  width: 100px;
+  height: 100px;
+}
+
+/*incoming forecast css*/
+.incoming-forecast {
+  background-color: burlywood;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-height: 88%;
 }
 
-.App-link {
-  color: #61dafb;
+.high-low {
+  padding: 16px;
+  background-color: #577c86;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.forecast-list-item {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  flex: 1;
+}
+.forecast-list-item h5 {
+  margin: 0px;
+  font-weight: 440;
+}
+.forecast-list-item small {
+  font-weight: 650;
+  color: #6c757d;
+}
+.coming-wrapper {
+  max-width: 100%;
+  display: flex;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 1rem;
+}
+.forecast-list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 4px;
+}
+.forecast-list-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+}
+.forecast-list-item h5 {
+  font-size: 20px;
+}
+.forecast-list-item small {
+  font-size: 18px;
+}
+
+.Dwrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5.1vh;
+  font-size: 16px;
+  max-height: 100%;
+  width: 77rem;
+}
+.Dcol {
+  max-height: 100%;
+  color: #f2f2f2;
+  width: 1rem;
+}
+.Dcol span {
+  border-bottom: #cb97f3 2px solid;
+}
+.DRcol {
+  width: 3rem;
+  max-height: 100%;
+  height: 100%;
+}
+.DRwrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  width: 77rem;
+  max-height: 80%;
+  margin: 12px;
+  border-bottom: #c2c2c2 3px solid;
+}
+.Dwrapper :nth-child(1) {
+  flex: 1;
+  align-self: flex-end;
+}
+.Dwrapper :nth-child(2) {
+  flex: 0.47;
+  align-self: flex-end;
+}
+.Dwrapper :nth-child(3) {
+  flex: 0.11;
+  align-self: flex-end;
+}
+/* .Dwrapper :nth-child(4) {
+  flex: 0;
+  padding-left: 10px;
+  align-self: flex-end;
+} */
+.DRcol img {
+  width: 5rem;
+  height: 5rem;
+  max-height: 100%;
+}
+/*parent for the Dwrapper/DRwrapper*/
+.day-row-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 100%;
 }
